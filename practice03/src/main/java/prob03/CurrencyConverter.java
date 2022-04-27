@@ -9,7 +9,7 @@ public class CurrencyConverter {
 	   public static double  toKRW(double dollar) {
 	      return dollar*rate;
 	   }
-	   public static void setRate(double r) {
-	      rate = r;
+	   public static void setRate(double rate) {
+		   CurrencyConverter.rate = rate;
 	   }
 }
