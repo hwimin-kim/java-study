@@ -2,6 +2,10 @@ package paint;
 
 public class ColorPoint extends Point {
 	private String color;
+	
+	public ColorPoint() {
+		super();
+	}
 
 	public ColorPoint(int x, int y, String color) {
 		super(x, y);
