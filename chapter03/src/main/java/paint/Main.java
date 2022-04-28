@@ -14,9 +14,18 @@ public class Main {
 		drawPoint(point2);
 		//point2.disapear();
 		point2.show(false);
+	
+		Point point3 = new ColorPoint(40, 50, "red");
+		//drawPoint(point3);
+		point3.show(true);
+		point3.show(false);
 	}
-
+	
 	public static void drawPoint(Point point) {
 		point.show();
 	}
+	
+	/*
+	 * public static void drawColorPoint(ColorPoint point) { point.show(); }
+	 */
 }
