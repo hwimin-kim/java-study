@@ -5,6 +5,14 @@ public class Point {
 	private int x;
 	private int y;
 	
+	public Point() {
+		this(0,0);
+	}
+	
+	public Point(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
 	public int getX() {
 		return x;
 	}
@@ -21,4 +29,16 @@ public class Point {
 	public void show() {
 		System.out.println("좌표(x:"+x+", y:"+y+")을 표시했습니다.");
 	}
+	
+	public void show(boolean visible) {
+		if(visible)
+		this.show();
+		else
+		System.out.println("좌표(x:"+x+", y:"+y+")을 지웠습니다.");
+	}
+	
+	/*
+	 * public void disapear() { System.out.println("좌표(x:"+x+", y:"+y+")을 지웠습니다.");
+	 * }
+	 */
 }
