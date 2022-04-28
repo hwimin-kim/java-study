@@ -9,10 +9,10 @@ public class Main {
 		 */
 		
 		Point point1 = new Point();
-		drawPoint(point1);
+		draw(point1);
 		
 		Point point2 = new Point(50,100);
-		drawPoint(point2);
+		draw(point2);
 		//point2.disapear();
 		point2.show(false);
 	
@@ -23,26 +23,37 @@ public class Main {
 		
 		//삼각형
 		Triangle triangle = new Triangle();
-		drawTriangle(triangle);
+		draw(triangle);
 		
 		//사각형
 		Rectangle rectangle = new Rectangle();
-		drawRectangle(rectangle);
+		draw(rectangle);
+		
+		//사각형
+		Circle circle = new Circle();
+		draw(circle);
+		
+		//
+		GraphicText graphicText = new GraphicText("Helloworld");
+		draw(graphicText);
 	}
 	
-	public static void drawPoint(Point point) {
-		point.show();
+	public static void draw(Drawable drawable) {
+		drawable.draw();
 	}
 	
 	/*
-	 * public static void drawColorPoint(ColorPoint point) { point.show(); }
+	 * public static void drawPoint(Point point) { point.show(); }
+	 * 
+	 * public static void drawShape(Shape shape) { shape.draw(); }
 	 */
 	
-	public static void drawTriangle(Triangle triangle) {
-		triangle.draw();
-	}
 	
-	public static void drawRectangle(Rectangle rectangle) {
-		rectangle.draw();
-	}
+	/*
+	 * public static void drawColorPoint(ColorPoint point) { point.show(); }
+	 * 
+	 * public static void drawTriangle(Triangle triangle) { triangle.draw(); }
+	 * 
+	 * public static void drawRectangle(Rectangle rectangle) { rectangle.draw(); }
+	 */
 }
