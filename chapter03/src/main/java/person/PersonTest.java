@@ -19,7 +19,6 @@ public class PersonTest {
 	       // downcasting 시
 	       // 부모 클래스 메소드에 접근 가능
 	       Student s2 = (Student)p1; //downcasting(명시적)
-	       s2.getGrade();
-      	       
+	       s2.getGrade();       
 	}
 }
