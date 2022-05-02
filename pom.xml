@@ -12,5 +12,6 @@
   	<module>test</module>
   	<module>practice04</module>
   	<module>chapter04</module>
+  	<module>practice05</module>
   </modules>
 </project>
