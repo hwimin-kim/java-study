@@ -28,35 +28,19 @@ public class CalcApp {
 			
 			switch( tokens[ 1 ] ) {
 				case "+" : {
-					Add add = new Add();
-					add.setValue( lValue, rValue );
-					int result = add.calculate();
-					System.out.println( ">> " + result );
-					
+					arithmetic(new Add(), lValue, rValue);		
 					break;
 				}
 				case "-" : {
-					Sub sub = new Sub();
-					sub.setValue( lValue, rValue );
-					int result = sub.calculate();
-					System.out.println( ">> " + result );
-					
+					arithmetic(new Sub(), lValue, rValue);		
 					break;
 				}
 				case "*" : {
-					Mul mul = new Mul();
-					mul.setValue( lValue, rValue );
-					int result = mul.calculate();
-					System.out.println( ">> " + result );
-					
+					arithmetic(new Mul(), lValue, rValue);
 					break;					
 				}
 				case "/" : {
-					Div div = new Div();
-					div.setValue( lValue, rValue );
-					int result = div.calculate();
-					System.out.println( ">> " + result );
-					
+					arithmetic(new Div(), lValue, rValue);
 					break;
 				}
 				default :  {
@@ -67,6 +51,13 @@ public class CalcApp {
 		
 		scanner.close();
 
+	}
+
+	public static void arithmetic(Arith arith, int lValue,  int rValue) {
+		Arith Operator = arith;
+		Operator.setValue( lValue, rValue );
+		int result = Operator.calculate();
+		System.out.println( ">> " + result );
 	}
 
 }
