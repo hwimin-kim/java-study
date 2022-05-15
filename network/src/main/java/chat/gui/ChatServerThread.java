@@ -135,16 +135,29 @@ public class ChatServerThread extends Thread {
 	}
 	
 	private void doUserListUpdate() {
-		System.out.println("유저리스트 업데이트 토큰 보냄");
 		synchronized(listWriters) {
 			String data = "USERS:";	
-			for(int i=0; i< listUsers.size() ;i++) {
-				if(i != listUsers.size()-1)
-					data += listUsers.get(i).getName() + ":";
-				else
-					data += listUsers.get(i).getName();
-			}
+			/*
+			 * for(int i=0; i< listUsers.size(); i++) { if(i != listUsers.size()-1) data +=
+			 * listUsers.get(i).getName() + ":"; else data += listUsers.get(i).getName(); }
+			 */
 			
+			for(int i=0; i< listUsers.size(); i++) {
+				if(listUsers.size() == 1) {
+					listUsers.get(i).setGrade("[M]");
+					data += listUsers.get(i).getName() + listUsers.get(i).getGrade();
+				} else {
+					if(i != listUsers.size()-1)
+						if(i == 0) {
+							listUsers.get(i).setGrade("[M]");
+							data += listUsers.get(i).getName() + listUsers.get(i).getGrade() + ":";
+						} else
+							data += listUsers.get(i).getName() + ":";
+					else
+						data += listUsers.get(i).getName();
+				}
+			}
+				
 			for(Writer writer : listWriters) {
 				PrintWriter printWriter = (PrintWriter)writer;
 				printWriter.println(data);
@@ -155,7 +168,6 @@ public class ChatServerThread extends Thread {
 	}
 	
 	private void doUserListDelete() {
-		System.out.println("유저리스트 삭제 토큰 보냄");
 		synchronized(listWriters) {
 			String data = "DELETE:";
 			for(Writer writer : listWriters) {
